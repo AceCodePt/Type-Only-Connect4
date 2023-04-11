@@ -69,7 +69,7 @@ type NewBoard<Board extends BoardType, Player extends PlayerUnion, Column extend
 ] extends [never, PlacementUnion] | [number, PlayerUnion]
     ? // For creating the new Board
       {
-          [prop in keyof Board]: prop extends Row ? NewRowArray<Board[prop], Player, Column> : prop extends "text" ? "" : Board[prop];
+          [prop in RowUnion]: prop extends Row ? NewRowArray<Board[prop], Player, Column> : prop extends "text" ? "" : Board[prop];
       }
     : NewBoard<Board, Player, Column, AddToRow<Row>>;
 
@@ -249,4 +249,4 @@ type Connect4<
         : BoardWithText<Board, `Invalid character only 1-7 -> ${Turn}`>
     : Board;
 
-type Result = Connect4<"1234">;
+type Result = Connect4<"1234343434">;
