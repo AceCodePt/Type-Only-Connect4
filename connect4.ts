@@ -1,7 +1,3 @@
-// 7cols 6rows
-// input is the column
-// applies the rules of gravity
-
 type Blank = "🟤";
 type FirstPlayer = "⚪";
 type SecondPlayer = "⚫";
